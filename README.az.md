@@ -136,4 +136,6 @@ ETL ~3 dəqiqə çəkir (sales faylı ~32 MB-dır). Sonra `powerbi/Amazon_Dashbo
 
 ---
 
+Müəllif: **Alyaz Cabbarova** · [GitHub](https://github.com/alyazcbbrv-byte) · [LinkedIn](https://www.linkedin.com/in/alyaz-cabbarova-450a6140b) · [alyazcbbrv@gmail.com](mailto:alyazcbbrv@gmail.com)
+
 Digər layihə: [Toyota satış analizi (Power BI dashboard)](https://github.com/alyazcbbrv-byte/toyota-sales-powerbi)

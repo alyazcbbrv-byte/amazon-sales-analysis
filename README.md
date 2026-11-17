@@ -139,7 +139,7 @@ The ETL takes about 3 minutes (the sales file is ~32 MB). Then open `powerbi/Ama
 
 ## Author
 
-**Alyaz Cabbarova**: [GitHub](https://github.com/alyazcbbrv-byte)
+**Alyaz Cabbarova**: [GitHub](https://github.com/alyazcbbrv-byte) · [LinkedIn](https://www.linkedin.com/in/alyaz-cabbarova-450a6140b) · [alyazcbbrv@gmail.com](mailto:alyazcbbrv@gmail.com)
 
 More projects: [Toyota sales dashboard](https://github.com/alyazcbbrv-byte/toyota-sales-powerbi) · [Retail chain: sales vs plan and churn](https://github.com/alyazcbbrv-byte/retail-sales-vs-plan-powerbi)
 
