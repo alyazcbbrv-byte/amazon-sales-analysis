@@ -22,7 +22,7 @@ powerbi/
 4. **Home → Transform data → Edit parameters → `FolderPath`**: `data/processed` qovluğunun tam yolunu yazın, sonunda `\` olsun.
    Məsələn: `C:\Users\Ad\Documents\amazon-sales-analysis\data\processed\`
 5. **Apply changes → Refresh**.
-6. Hesabata vahid görünüş vermək üçün temanı tətbiq edin: **View → Themes → Browse for themes** → `powerbi/theme/amazon_theme.json`.
+6. Tema (`theme/amazon_theme.json`) hesabata artıq daxil edilib, əlavə addım lazım deyil.
 
 ## Vizual tema
 
@@ -85,16 +85,15 @@ erDiagram
 
 ## Hesabat səhifələri
 
-1. **Satış Analizi**
+1. **Satış icmalı**
    - KPI kartları: Ümumi Satış, Ötən ilin eyni dövrü, İldən ilə böyümə %, Ötən aya görə satış, Aylıq artım %, Məhsul sayı
-   - Top 10 şəhər (bar chart)
+   - Top 10 şəhər (bar chart, Top N filtri hazırdır)
    - Aylar üzrə satış, ötən il və illik artım % (combo chart)
    - Ştat → Şəhər → Kateqoriya üzrə matris (satış, ötən ay, aylıq artım %)
    - Slicer-lər: İl, Ay, Kateqoriya, Ştat
-2. **Xəritə** — ştatlar üzrə satış (filled map) və eyni 4 slicer.
+2. **Coğrafiya** — ştatlar üzrə satış (filled map) və eyni 4 slicer.
 
 ### Əl ilə tamamlanmalı addımlar
-- Top 10 şəhər qrafiki: Filters → *Şəhər (Ştat)* → Top N = 10, By value = *Ümumi Satış*.
 - Aylar qrafiki: Format → Edit interactions ilə Ay slicer-inin təsirini söndürün.
 - Calendar cədvəli: Table tools → **Mark as date table** → `Date` (işarələnməyibsə).
 - Hesabatın ekran şəklini `reports/figures/powerbi_dashboard.png` kimi saxlayın — əsas README-də göstəriləcək.
