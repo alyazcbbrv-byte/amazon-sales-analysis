@@ -1,0 +1,23 @@
+# Məlumat faylları (böyük həcmli — repo-ya daxil edilmir)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+*.xlsx
+*.pbix
+
+# Power BI Desktop-un lokal faylları
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

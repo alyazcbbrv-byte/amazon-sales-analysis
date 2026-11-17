@@ -1,0 +1,88 @@
+{
+  "name": "Amazon Sales — Navy & Orange",
+  "dataColors": [
+    "#14213D",
+    "#F28C28",
+    "#2A9D8F",
+    "#5C677D",
+    "#8E7DBE",
+    "#E9C46A",
+    "#B8C0CC",
+    "#D1495B"
+  ],
+  "foreground": "#1F2933",
+  "foregroundNeutralSecondary": "#6B7785",
+  "foregroundNeutralTertiary": "#B8C0CC",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F6F8FB",
+  "backgroundNeutral": "#E9EDF2",
+  "tableAccent": "#14213D",
+  "good": "#2A9D8F",
+  "neutral": "#E9C46A",
+  "bad": "#D1495B",
+  "maximum": "#14213D",
+  "center": "#9DB4CF",
+  "minimum": "#F4F6F9",
+  "textClasses": {
+    "callout": { "fontSize": 28, "fontFace": "Segoe UI Semibold", "color": "#14213D" },
+    "title": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#1F2933" },
+    "header": { "fontSize": 11, "fontFace": "Segoe UI Semibold", "color": "#1F2933" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#6B7785" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#E9EDF2" } }, "radius": 8 }],
+        "dropShadow": [{ "show": false }],
+        "padding": [{ "top": 10, "bottom": 10, "left": 12, "right": 12 }],
+        "title": [{ "show": true, "fontColor": { "solid": { "color": "#1F2933" } }, "fontSize": 12, "bold": true, "alignment": "left" }],
+        "visualHeader": [{ "show": true }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F3F5F8" } }, "transparency": 0 }]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [{ "color": { "solid": { "color": "#14213D" } }, "fontSize": 26 }],
+        "categoryLabels": [{ "color": { "solid": { "color": "#6B7785" } }, "fontSize": 10 }]
+      }
+    },
+    "slicer": {
+      "*": {
+        "header": [{ "fontColor": { "solid": { "color": "#6B7785" } }, "textSize": 10 }],
+        "items": [{ "fontColor": { "solid": { "color": "#1F2933" } }, "textSize": 10 }]
+      }
+    },
+    "barChart": {
+      "*": {
+        "categoryAxis": [{ "gridlineShow": false, "labelColor": { "solid": { "color": "#6B7785" } } }],
+        "valueAxis": [{ "show": false, "gridlineShow": false }],
+        "labels": [{ "show": true, "color": { "solid": { "color": "#1F2933" } }, "fontSize": 9 }]
+      }
+    },
+    "lineClusteredColumnComboChart": {
+      "*": {
+        "valueAxis": [{ "gridlineColor": { "solid": { "color": "#E9EDF2" } }, "labelColor": { "solid": { "color": "#6B7785" } } }],
+        "categoryAxis": [{ "labelColor": { "solid": { "color": "#6B7785" } } }],
+        "legend": [{ "show": true, "position": "Top", "labelColor": { "solid": { "color": "#6B7785" } } }]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "columnHeaders": [{ "fontColor": { "solid": { "color": "#FFFFFF" } }, "backColor": { "solid": { "color": "#14213D" } }, "bold": true }],
+        "rowHeaders": [{ "fontColor": { "solid": { "color": "#1F2933" } } }],
+        "values": [{ "fontColor": { "solid": { "color": "#1F2933" } }, "backColorSecondary": { "solid": { "color": "#F6F8FB" } } }],
+        "grid": [{ "gridHorizontalColor": { "solid": { "color": "#E9EDF2" } }, "gridVerticalColor": { "solid": { "color": "#FFFFFF" } } }]
+      }
+    },
+    "filledMap": {
+      "*": {
+        "dataPoint": [{ "fillRule": { "linearGradient2": { "min": { "color": "#E9EDF2" }, "max": { "color": "#14213D" } } } }]
+      }
+    }
+  }
+}

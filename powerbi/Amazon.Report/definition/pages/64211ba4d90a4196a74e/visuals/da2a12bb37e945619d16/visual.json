@@ -1,0 +1,128 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "da2a12bb37e945619d16",
+  "position": {
+    "x": 22,
+    "y": 472,
+    "z": 0,
+    "height": 236,
+    "width": 1236,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Amazon_city"
+                    }
+                  },
+                  "Property": "Ştat"
+                }
+              },
+              "queryRef": "Amazon_city.Ştat"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Amazon_city"
+                    }
+                  },
+                  "Property": "Şəhər (Ştat)"
+                }
+              },
+              "queryRef": "Amazon_city.Şəhər (Ştat)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Amazon_sku"
+                    }
+                  },
+                  "Property": "Kateqoriya"
+                }
+              },
+              "queryRef": "Amazon_sku.Kateqoriya"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ümumi Satış"
+                }
+              },
+              "queryRef": "amazon_sales.Ümumi Satış"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ötən aya görə satış"
+                }
+              },
+              "queryRef": "amazon_sales.Ötən aya görə satış"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ötən aya görə satışın artım %"
+                }
+              },
+              "queryRef": "amazon_sales.Ötən aya görə satışın artım %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Ştat, şəhər, kateqoriya üzrə Satış'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

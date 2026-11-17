@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "3f25bfc5f9d94d0b9c9d",
+  "position": {
+    "x": 22,
+    "y": 94,
+    "z": 0,
+    "height": 104,
+    "width": 196,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ümumi Satış"
+                }
+              },
+              "queryRef": "amazon_sales.Ümumi Satış"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

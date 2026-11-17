@@ -1,0 +1,76 @@
+table amazon_sales
+
+	column Tarix
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Tarix
+
+	column 'Şəhər_İD'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Şəhər_İD
+
+	column 'Sifaris_İD'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Sifaris_İD
+
+	column 'Satış'
+		dataType: double
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: Satış
+
+	column Tip
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tip
+
+	column 'Məhsul_kodu'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Məhsul_kodu
+
+	measure 'Ümumi Satış' = SUM(amazon_sales[Satış])
+		formatString: #,0.00
+
+	measure 'Ötən ilin eyni dövrü üzrə satış' = CALCULATE([Ümumi Satış], SAMEPERIODLASTYEAR('Calendar'[Date]))
+		formatString: #,0.00
+
+	measure 'Ötən aya görə satış' = IF(HASONEVALUE('Calendar'[İlAy]), CALCULATE([Ümumi Satış], DATEADD('Calendar'[Date], -1, MONTH)))
+		formatString: #,0.00
+
+	measure 'Ötən aya görə satışın artım %' = DIVIDE([Ümumi Satış] - [Ötən aya görə satış], [Ötən aya görə satış])
+		formatString: 0.0%
+
+	measure 'Satışın ildən ilə böyümə %' = DIVIDE([Ümumi Satış] - [Ötən ilin eyni dövrü üzrə satış], [Ötən ilin eyni dövrü üzrə satış])
+		formatString: 0.0%
+
+	measure 'Məhsul sayı (növ)' = DISTINCTCOUNT(amazon_sales[Məhsul_kodu])
+		formatString: #,0
+
+	measure 'Əməliyyat sayı' = COUNTROWS(amazon_sales)
+		formatString: #,0
+
+	measure 'Orta əməliyyat dəyəri' = DIVIDE([Ümumi Satış], [Əməliyyat sayı])
+		formatString: #,0.00
+
+	measure 'İlin əvvəlindən satış (YTD)' = TOTALYTD([Ümumi Satış], 'Calendar'[Date])
+		formatString: #,0.00
+
+	measure 'Satış payı %' = DIVIDE([Ümumi Satış], CALCULATE([Ümumi Satış], ALLSELECTED()))
+		formatString: 0.0%
+
+	partition amazon_sales = m
+		mode: import
+		source =
+				let
+				    Src = Csv.Document(File.Contents(FolderPath & "sales.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Hdr = Table.PromoteHeaders(Src, [PromoteAllScalars = true]),
+				    Renamed = Table.RenameColumns(Hdr, {{"Seher_ID", "Şəhər_İD"}, {"Sifaris_ID", "Sifaris_İD"}, {"Satis", "Satış"}, {"Mehsul_kodu", "Məhsul_kodu"}}),
+				    Result = Table.TransformColumnTypes(Renamed, {{"Tarix", type date}, {"Şəhər_İD", Int64.Type}, {"Sifaris_İD", Int64.Type}, {"Satış", type number}, {"Tip", type text}, {"Məhsul_kodu", type text}}, "en-US")
+				in
+				    Result

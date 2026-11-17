@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "dae2ff50eeb24a12bd83",
+  "position": {
+    "x": 646,
+    "y": 94,
+    "z": 0,
+    "height": 104,
+    "width": 196,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ötən aya görə satışın artım %"
+                }
+              },
+              "queryRef": "amazon_sales.Ötən aya görə satışın artım %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

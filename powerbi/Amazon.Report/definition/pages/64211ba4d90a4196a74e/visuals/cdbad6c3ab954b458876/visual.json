@@ -1,0 +1,76 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "cdbad6c3ab954b458876",
+  "position": {
+    "x": 794,
+    "y": 210,
+    "z": 0,
+    "height": 250,
+    "width": 464,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Amazon_city"
+                    }
+                  },
+                  "Property": "Şəhər (Ştat)"
+                }
+              },
+              "queryRef": "Amazon_city.Şəhər (Ştat)"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ümumi Satış"
+                }
+              },
+              "queryRef": "amazon_sales.Ümumi Satış"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top 10 şəhər üzrə Satış'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

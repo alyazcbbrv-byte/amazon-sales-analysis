@@ -1,0 +1,35 @@
+table amazon_stock
+
+	column Stock
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Stock
+
+	column 'Məhsul_kodu'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Məhsul_kodu
+
+	column Tarix
+		dataType: dateTime
+		formatString: dd.MM.yyyy
+		summarizeBy: none
+		sourceColumn: Tarix
+
+	measure 'Orta gündəlik stok' = AVERAGEX(VALUES('Calendar'[Date]), CALCULATE(SUM(amazon_stock[Stock])))
+		formatString: #,0
+
+	measure 'Son tarixdəki stok' = VAR d = CALCULATE(MAX(amazon_stock[Tarix])) RETURN CALCULATE(SUM(amazon_stock[Stock]), amazon_stock[Tarix] = d)
+		formatString: #,0
+
+	partition amazon_stock = m
+		mode: import
+		source =
+				let
+				    Src = Csv.Document(File.Contents(FolderPath & "stock.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Hdr = Table.PromoteHeaders(Src, [PromoteAllScalars = true]),
+				    Renamed = Table.RenameColumns(Hdr, {{"Mehsul_kodu", "Məhsul_kodu"}}),
+				    Result = Table.TransformColumnTypes(Renamed, {{"Tarix", type date}, {"Məhsul_kodu", type text}, {"Stock", Int64.Type}}, "en-US")
+				in
+				    Result

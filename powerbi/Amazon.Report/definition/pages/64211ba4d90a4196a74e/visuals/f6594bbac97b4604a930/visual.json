@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "f6594bbac97b4604a930",
+  "position": {
+    "x": 22,
+    "y": 210,
+    "z": 0,
+    "height": 250,
+    "width": 760,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "lineClusteredColumnComboChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Ay"
+                }
+              },
+              "queryRef": "Calendar.Ay"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ümumi Satış"
+                }
+              },
+              "queryRef": "amazon_sales.Ümumi Satış"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Ötən ilin eyni dövrü üzrə satış"
+                }
+              },
+              "queryRef": "amazon_sales.Ötən ilin eyni dövrü üzrə satış"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "amazon_sales"
+                    }
+                  },
+                  "Property": "Satışın ildən ilə böyümə %"
+                }
+              },
+              "queryRef": "amazon_sales.Satışın ildən ilə böyümə %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Aylar üzrə Satış, Ötən ilin eyni dövrü üzrə satış, Satışın ildən ilə böyümə %'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

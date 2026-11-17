@@ -1,0 +1,37 @@
+table Amazon_sku
+
+	column 'Məhsul_kodu'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Məhsul_kodu
+
+	column Dizayn_No
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Dizayn_No
+
+	column Kateqoriya
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Kateqoriya
+
+	column 'Ölçü'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ölçü
+
+	column 'Rəng'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rəng
+
+	partition Amazon_sku = m
+		mode: import
+		source =
+				let
+				    Src = Csv.Document(File.Contents(FolderPath & "sku.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Hdr = Table.PromoteHeaders(Src, [PromoteAllScalars = true]),
+				    Renamed = Table.RenameColumns(Hdr, {{"Mehsul_kodu", "Məhsul_kodu"}, {"Olcu", "Ölçü"}, {"Reng", "Rəng"}}),
+				    Result = Table.TransformColumnTypes(Renamed, {{"Məhsul_kodu", type text}, {"Dizayn_No", type text}, {"Kateqoriya", type text}, {"Ölçü", type text}, {"Rəng", type text}})
+				in
+				    Result

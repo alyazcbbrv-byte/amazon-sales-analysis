@@ -1,0 +1,51 @@
+table Amazon_city
+
+	column 'Ştat_İD'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ştat_İD
+
+	column 'Ştat'
+		dataType: string
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: Ştat
+
+	column 'Şəhər_İD'
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: Şəhər_İD
+
+	column 'Şəhər'
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Şəhər
+
+	column lat
+		dataType: double
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: lat
+
+	column lng
+		dataType: double
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: lng
+
+	column 'Şəhər (Ştat)' = Amazon_city[Şəhər] & ", " & Amazon_city[Ştat_İD]
+		dataType: string
+		summarizeBy: none
+
+	partition Amazon_city = m
+		mode: import
+		source =
+				let
+				    Src = Csv.Document(File.Contents(FolderPath & "city.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Hdr = Table.PromoteHeaders(Src, [PromoteAllScalars = true]),
+				    Cols = Table.SelectColumns(Hdr, {"Stat_ID", "Stat", "Seher_ID", "Seher", "lat", "lng"}),
+				    Renamed = Table.RenameColumns(Cols, {{"Stat_ID", "Ştat_İD"}, {"Stat", "Ştat"}, {"Seher_ID", "Şəhər_İD"}, {"Seher", "Şəhər"}}),
+				    Result = Table.TransformColumnTypes(Renamed, {{"Ştat_İD", type text}, {"Ştat", type text}, {"Şəhər_İD", Int64.Type}, {"Şəhər", type text}, {"lat", type number}, {"lng", type number}}, "en-US")
+				in
+				    Result
