@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "f6f2d27d627c41a2944b",
   "position": {
     "x": 230,
-    "y": 94,
+    "y": 158,
     "z": 0,
     "height": 104,
     "width": 196,
@@ -26,7 +26,8 @@
                   "Property": "Ötən ilin eyni dövrü üzrə satış"
                 }
               },
-              "queryRef": "amazon_sales.Ötən ilin eyni dövrü üzrə satış"
+              "queryRef": "amazon_sales.Ötən ilin eyni dövrü üzrə satış",
+              "nativeQueryRef": "Ötən ilin eyni dövrü üzrə satış"
             }
           ]
         }

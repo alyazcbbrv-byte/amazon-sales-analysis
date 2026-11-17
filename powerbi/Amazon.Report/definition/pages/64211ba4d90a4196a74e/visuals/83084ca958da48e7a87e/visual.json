@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "83084ca958da48e7a87e",
   "position": {
     "x": 958,
-    "y": 14,
+    "y": 78,
     "z": 0,
     "height": 66,
     "width": 296,
@@ -26,7 +26,8 @@
                   "Property": "Kateqoriya"
                 }
               },
-              "queryRef": "Amazon_sku.Kateqoriya"
+              "queryRef": "Amazon_sku.Kateqoriya",
+              "nativeQueryRef": "Kateqoriya"
             }
           ]
         }

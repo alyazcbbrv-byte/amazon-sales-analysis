@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "103f148eb0aa4afb98f0",
   "position": {
     "x": 854,
-    "y": 94,
+    "y": 158,
     "z": 0,
     "height": 104,
     "width": 196,
@@ -26,7 +26,8 @@
                   "Property": "Satışın ildən ilə böyümə %"
                 }
               },
-              "queryRef": "amazon_sales.Satışın ildən ilə böyümə %"
+              "queryRef": "amazon_sales.Satışın ildən ilə böyümə %",
+              "nativeQueryRef": "Satışın ildən ilə böyümə %"
             }
           ]
         }

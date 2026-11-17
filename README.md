@@ -60,8 +60,9 @@ Tam hesabat: [reports/summary.md](reports/summary.md)
 
 ## Power BI hesabatı
 
-<!-- Power BI-dan ekran şəklini bu yola saxlayın: reports/figures/powerbi_dashboard.png -->
-<!-- ![Power BI dashboard](reports/figures/powerbi_dashboard.png) -->
+![Power BI dashboard](reports/figures/powerbi_dashboard.png)
+
+İki səhifə: **📊 Satış icmalı** (KPI-lar, aylıq müqayisə, Top 10 şəhər, ştat matrisi) və **🗺️ Coğrafiya** (ştatlar üzrə xəritə). Səhifələr arasında yuxarıdakı düymələrlə keçid olunur.
 
 Model ulduz sxemindədir: `amazon_sales` və `amazon_stock` fakt cədvəlləri, `Amazon_sku`, `Amazon_city` və `Calendar` ölçü cədvəlləri. Time-intelligence ölçüləri (YoY, MoM, YTD) DAX ilə yazılıb.
 Quraşdırma, model sxemi və bütün DAX ölçüləri: [powerbi/README.md](powerbi/README.md)

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Amazon_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4edee142-90b9-4c44-b4b9-e32155247428"
+  }
+}

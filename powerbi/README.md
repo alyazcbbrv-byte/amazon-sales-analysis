@@ -11,6 +11,8 @@ powerbi/
 
 ## Açmaq üçün
 
+> **Vacib:** layihəni qısa yolda saxlayın, məsələn `C:\Users\Ad\Documents\amazon-sales-analysis`. Windows-da fayl yolu 256 simvoldan uzun olarsa, Power BI vizual fayllarını oxuya bilmir və səhifələr boş görünür.
+
 1. **Power BI Desktop** → File → Options and settings → Options → **Preview features**:
    - *Power BI Project (.pbip) save option*
    - *Store reports using enhanced metadata format (PBIR)*
@@ -85,13 +87,13 @@ erDiagram
 
 ## Hesabat səhifələri
 
-1. **Satış icmalı**
+1. **📊 Satış icmalı**
    - KPI kartları: Ümumi Satış, Ötən ilin eyni dövrü, İldən ilə böyümə %, Ötən aya görə satış, Aylıq artım %, Məhsul sayı
    - Top 10 şəhər (bar chart, Top N filtri hazırdır)
    - Aylar üzrə satış, ötən il və illik artım % (combo chart)
    - Ştat → Şəhər → Kateqoriya üzrə matris (satış, ötən ay, aylıq artım %)
    - Slicer-lər: İl, Ay, Kateqoriya, Ştat
-2. **Coğrafiya** — ştatlar üzrə satış (filled map) və eyni 4 slicer.
+2. **🗺️ Coğrafiya** — ştatlar üzrə satış (filled map) və eyni 4 slicer.
 
 ### Əl ilə tamamlanmalı addımlar
 - Aylar qrafiki: Format → Edit interactions ilə Ay slicer-inin təsirini söndürün.

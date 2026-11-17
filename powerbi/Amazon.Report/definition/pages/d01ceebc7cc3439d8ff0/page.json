@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "d01ceebc7cc3439d8ff0",
-  "displayName": "Coğrafiya",
+  "displayName": "🗺️ Coğrafiya",
   "displayOption": "FitToPage",
-  "height": 720,
+  "height": 780,
   "width": 1280,
   "objects": {
     "background": [

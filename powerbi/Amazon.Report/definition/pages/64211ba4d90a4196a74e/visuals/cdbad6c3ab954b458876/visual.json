@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "cdbad6c3ab954b458876",
   "position": {
     "x": 794,
-    "y": 210,
+    "y": 274,
     "z": 0,
     "height": 250,
     "width": 464,
@@ -26,7 +26,8 @@
                   "Property": "Şəhər (Ştat)"
                 }
               },
-              "queryRef": "Amazon_city.Şəhər (Ştat)"
+              "queryRef": "Amazon_city.Şəhər (Ştat)",
+              "nativeQueryRef": "Şəhər (Ştat)"
             }
           ]
         },
@@ -43,35 +44,54 @@
                   "Property": "Ümumi Satış"
                 }
               },
-              "queryRef": "amazon_sales.Ümumi Satış"
+              "queryRef": "amazon_sales.Ümumi Satış",
+              "nativeQueryRef": "Ümumi Satış"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "amazon_sales"
+                  }
+                },
+                "Property": "Ümumi Satış"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
-  },
-  "visualContainerObjects": {
-    "title": [
-      {
-        "properties": {
-          "show": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
-            }
-          },
-          "text": {
-            "expr": {
-              "Literal": {
-                "Value": "'Top 10 şəhər üzrə Satış'"
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 şəhər üzrə Satış'"
+                }
               }
             }
           }
         }
-      }
-    ]
+      ]
+    }
   },
   "filterConfig": {
     "filters": [

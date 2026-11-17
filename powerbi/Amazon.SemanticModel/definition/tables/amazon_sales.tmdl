@@ -37,16 +37,16 @@ table amazon_sales
 	measure 'Ümumi Satış' = SUM(amazon_sales[Satış])
 		formatString: #,0.00
 
-	measure 'Ötən ilin eyni dövrü üzrə satış' = CALCULATE([Ümumi Satış], SAMEPERIODLASTYEAR('Calendar'[Date]))
+	measure 'Ötən ilin eyni dövrü üzrə satış' = VAR y = YEAR(CALCULATE(MAX(amazon_sales[Tarix]))) RETURN CALCULATE([Ümumi Satış], SAMEPERIODLASTYEAR(FILTER(VALUES('Calendar'[Date]), YEAR('Calendar'[Date]) = y)), REMOVEFILTERS('Calendar'))
 		formatString: #,0.00
 
-	measure 'Ötən aya görə satış' = IF(HASONEVALUE('Calendar'[İlAy]), CALCULATE([Ümumi Satış], DATEADD('Calendar'[Date], -1, MONTH)))
+	measure 'Ötən aya görə satış' = VAR d = CALCULATE(MAX(amazon_sales[Tarix])) RETURN CALCULATE([Ümumi Satış], DATESBETWEEN('Calendar'[Date], EOMONTH(d, -2) + 1, EOMONTH(d, -1)), REMOVEFILTERS('Calendar'))
 		formatString: #,0.00
 
-	measure 'Ötən aya görə satışın artım %' = DIVIDE([Ümumi Satış] - [Ötən aya görə satış], [Ötən aya görə satış])
+	measure 'Ötən aya görə satışın artım %' = DIVIDE([Cari ay satışı] - [Ötən aya görə satış], [Ötən aya görə satış])
 		formatString: 0.0%
 
-	measure 'Satışın ildən ilə böyümə %' = DIVIDE([Ümumi Satış] - [Ötən ilin eyni dövrü üzrə satış], [Ötən ilin eyni dövrü üzrə satış])
+	measure 'Satışın ildən ilə böyümə %' = DIVIDE([Cari il satışı] - [Ötən ilin eyni dövrü üzrə satış], [Ötən ilin eyni dövrü üzrə satış])
 		formatString: 0.0%
 
 	measure 'Məhsul sayı (növ)' = DISTINCTCOUNT(amazon_sales[Məhsul_kodu])
@@ -63,6 +63,12 @@ table amazon_sales
 
 	measure 'Satış payı %' = DIVIDE([Ümumi Satış], CALCULATE([Ümumi Satış], ALLSELECTED()))
 		formatString: 0.0%
+
+	measure 'Cari il satışı' = VAR y = YEAR(CALCULATE(MAX(amazon_sales[Tarix]))) RETURN CALCULATE([Ümumi Satış], FILTER(VALUES('Calendar'[Date]), YEAR('Calendar'[Date]) = y))
+		formatString: #,0.00
+
+	measure 'Cari ay satışı' = VAR d = CALCULATE(MAX(amazon_sales[Tarix])) RETURN CALCULATE([Ümumi Satış], DATESBETWEEN('Calendar'[Date], EOMONTH(d, -1) + 1, EOMONTH(d, 0)), REMOVEFILTERS('Calendar'))
+		formatString: #,0.00
 
 	partition amazon_sales = m
 		mode: import

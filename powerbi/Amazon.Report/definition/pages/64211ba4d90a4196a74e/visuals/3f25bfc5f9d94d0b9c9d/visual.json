@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "3f25bfc5f9d94d0b9c9d",
   "position": {
     "x": 22,
-    "y": 94,
+    "y": 158,
     "z": 0,
     "height": 104,
     "width": 196,
@@ -26,7 +26,8 @@
                   "Property": "Ümumi Satış"
                 }
               },
-              "queryRef": "amazon_sales.Ümumi Satış"
+              "queryRef": "amazon_sales.Ümumi Satış",
+              "nativeQueryRef": "Ümumi Satış"
             }
           ]
         }

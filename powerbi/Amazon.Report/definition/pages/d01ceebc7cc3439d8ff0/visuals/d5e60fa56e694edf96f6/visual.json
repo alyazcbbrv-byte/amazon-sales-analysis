@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "d5e60fa56e694edf96f6",
   "position": {
     "x": 22,
-    "y": 94,
+    "y": 158,
     "z": 0,
     "height": 610,
     "width": 1236,
@@ -26,7 +26,8 @@
                   "Property": "Ştat"
                 }
               },
-              "queryRef": "Amazon_city.Ştat"
+              "queryRef": "Amazon_city.Ştat",
+              "nativeQueryRef": "Ştat"
             }
           ]
         },
@@ -43,34 +44,35 @@
                   "Property": "Ümumi Satış"
                 }
               },
-              "queryRef": "amazon_sales.Ümumi Satış"
+              "queryRef": "amazon_sales.Ümumi Satış",
+              "nativeQueryRef": "Ümumi Satış"
             }
           ]
         }
       }
     },
-    "drillFilterOtherVisuals": true
-  },
-  "visualContainerObjects": {
-    "title": [
-      {
-        "properties": {
-          "show": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
-            }
-          },
-          "text": {
-            "expr": {
-              "Literal": {
-                "Value": "'Ştat üzrə Satış'"
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ştat üzrə Satış'"
+                }
               }
             }
           }
         }
-      }
-    ]
+      ]
+    }
   }
 }

@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "1f3ec30c5c7b472f9335",
   "position": {
     "x": 334,
-    "y": 14,
+    "y": 78,
     "z": 0,
     "height": 66,
     "width": 296,
@@ -26,7 +26,8 @@
                   "Property": "Ay"
                 }
               },
-              "queryRef": "Calendar.Ay"
+              "queryRef": "Calendar.Ay",
+              "nativeQueryRef": "Ay"
             }
           ]
         }

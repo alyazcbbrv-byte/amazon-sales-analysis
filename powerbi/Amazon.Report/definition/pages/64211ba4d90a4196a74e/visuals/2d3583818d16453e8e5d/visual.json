@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "2d3583818d16453e8e5d",
   "position": {
     "x": 1062,
-    "y": 94,
+    "y": 158,
     "z": 0,
     "height": 104,
     "width": 196,
@@ -26,7 +26,8 @@
                   "Property": "Məhsul sayı (növ)"
                 }
               },
-              "queryRef": "amazon_sales.Məhsul sayı (növ)"
+              "queryRef": "amazon_sales.Məhsul sayı (növ)",
+              "nativeQueryRef": "Məhsul sayı (növ)"
             }
           ]
         }

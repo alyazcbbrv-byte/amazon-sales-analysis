@@ -1,6 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.0.0/schema.json",
   "themeCollection": {
+    "baseTheme": {
+      "name": "CY24SU06",
+      "reportVersionAtImport": "5.55",
+      "type": "SharedResources"
+    },
     "customTheme": {
       "name": "amazon_theme.json",
       "reportVersionAtImport": "5.55",
@@ -9,6 +14,17 @@
   },
   "layoutOptimization": "None",
   "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY24SU06",
+          "path": "BaseThemes/CY24SU06.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
     {
       "name": "RegisteredResources",
       "type": "RegisteredResources",

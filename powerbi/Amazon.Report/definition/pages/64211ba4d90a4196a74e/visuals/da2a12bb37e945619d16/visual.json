@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "da2a12bb37e945619d16",
   "position": {
     "x": 22,
-    "y": 472,
+    "y": 536,
     "z": 0,
     "height": 236,
     "width": 1236,
@@ -26,7 +26,8 @@
                   "Property": "Ştat"
                 }
               },
-              "queryRef": "Amazon_city.Ştat"
+              "queryRef": "Amazon_city.Ştat",
+              "nativeQueryRef": "Ştat"
             },
             {
               "field": {
@@ -39,7 +40,8 @@
                   "Property": "Şəhər (Ştat)"
                 }
               },
-              "queryRef": "Amazon_city.Şəhər (Ştat)"
+              "queryRef": "Amazon_city.Şəhər (Ştat)",
+              "nativeQueryRef": "Şəhər (Ştat)"
             },
             {
               "field": {
@@ -52,7 +54,8 @@
                   "Property": "Kateqoriya"
                 }
               },
-              "queryRef": "Amazon_sku.Kateqoriya"
+              "queryRef": "Amazon_sku.Kateqoriya",
+              "nativeQueryRef": "Kateqoriya"
             }
           ]
         },
@@ -69,7 +72,8 @@
                   "Property": "Ümumi Satış"
                 }
               },
-              "queryRef": "amazon_sales.Ümumi Satış"
+              "queryRef": "amazon_sales.Ümumi Satış",
+              "nativeQueryRef": "Ümumi Satış"
             },
             {
               "field": {
@@ -82,7 +86,8 @@
                   "Property": "Ötən aya görə satış"
                 }
               },
-              "queryRef": "amazon_sales.Ötən aya görə satış"
+              "queryRef": "amazon_sales.Ötən aya görə satış",
+              "nativeQueryRef": "Ötən aya görə satış"
             },
             {
               "field": {
@@ -95,34 +100,35 @@
                   "Property": "Ötən aya görə satışın artım %"
                 }
               },
-              "queryRef": "amazon_sales.Ötən aya görə satışın artım %"
+              "queryRef": "amazon_sales.Ötən aya görə satışın artım %",
+              "nativeQueryRef": "Ötən aya görə satışın artım %"
             }
           ]
         }
       }
     },
-    "drillFilterOtherVisuals": true
-  },
-  "visualContainerObjects": {
-    "title": [
-      {
-        "properties": {
-          "show": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
-            }
-          },
-          "text": {
-            "expr": {
-              "Literal": {
-                "Value": "'Ştat, şəhər, kateqoriya üzrə Satış'"
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ştat, şəhər, kateqoriya üzrə Satış'"
+                }
               }
             }
           }
         }
-      }
-    ]
+      ]
+    }
   }
 }

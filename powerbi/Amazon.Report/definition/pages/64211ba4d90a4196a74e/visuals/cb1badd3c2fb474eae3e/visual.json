@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "cb1badd3c2fb474eae3e",
   "position": {
     "x": 646,
-    "y": 14,
+    "y": 78,
     "z": 0,
     "height": 66,
     "width": 296,
@@ -26,7 +26,8 @@
                   "Property": "Ştat"
                 }
               },
-              "queryRef": "Amazon_city.Ştat"
+              "queryRef": "Amazon_city.Ştat",
+              "nativeQueryRef": "Ştat"
             }
           ]
         }
