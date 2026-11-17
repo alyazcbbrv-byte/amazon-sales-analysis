@@ -131,3 +131,7 @@ ETL ~3 dəqiqə çəkir (sales faylı ~32 MB-dır). Sonra `powerbi/Amazon_Dashbo
 - **Python**: pandas, openpyxl, matplotlib
 - **Power BI Desktop**: Power Query (M), DAX, PBIP/TMDL formatı
 - **Git** ilə versiya nəzarəti — Power BI modeli mətn faylları kimi saxlanılır
+
+---
+
+Digər layihə: [Toyota satış analizi (Power BI dashboard)](https://github.com/alyazcbbrv-byte/toyota-sales-powerbi)
