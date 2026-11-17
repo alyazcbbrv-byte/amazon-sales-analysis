@@ -112,7 +112,7 @@ Fayllar böyük olduğu üçün repo-ya daxil edilməyib. Onları `data/raw/` qo
 ## İşə salmaq
 
 ```bash
-git clone https://github.com/<istifadəçi-adı>/amazon-sales-analysis.git
+git clone https://github.com/alyazcbbrv-byte/amazon-sales-analysis.git
 cd amazon-sales-analysis
 python -m venv .venv
 .venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
