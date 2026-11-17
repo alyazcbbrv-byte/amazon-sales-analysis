@@ -1,27 +1,33 @@
 table amazon_stock
+	lineageTag: c76bd715-e64a-47c9-8684-f6309c828f90
+
+	measure 'Orta gündəlik stok' = AVERAGEX(VALUES('Calendar'[Date]), CALCULATE(SUM(amazon_stock[Stock])))
+		formatString: #,0
+		lineageTag: d555bc04-872c-4ee4-ab19-b857106c918a
+
+	measure 'Son tarixdəki stok' = VAR d = CALCULATE(MAX(amazon_stock[Tarix])) RETURN CALCULATE(SUM(amazon_stock[Stock]), amazon_stock[Tarix] = d)
+		formatString: #,0
+		lineageTag: 27ec4fb6-bb94-4722-a695-19f8ff79820a
 
 	column Stock
 		dataType: int64
 		formatString: 0
+		lineageTag: 33b3c20c-7e11-45ff-896b-e1b0025c409d
 		summarizeBy: none
 		sourceColumn: Stock
 
-	column 'Məhsul_kodu'
+	column Məhsul_kodu
 		dataType: string
+		lineageTag: 5a927908-b449-424f-8668-f0fe27cce822
 		summarizeBy: none
 		sourceColumn: Məhsul_kodu
 
 	column Tarix
 		dataType: dateTime
 		formatString: dd.MM.yyyy
+		lineageTag: f63d9476-1528-4110-8e4e-96b7091e793e
 		summarizeBy: none
 		sourceColumn: Tarix
-
-	measure 'Orta gündəlik stok' = AVERAGEX(VALUES('Calendar'[Date]), CALCULATE(SUM(amazon_stock[Stock])))
-		formatString: #,0
-
-	measure 'Son tarixdəki stok' = VAR d = CALCULATE(MAX(amazon_stock[Tarix])) RETURN CALCULATE(SUM(amazon_stock[Stock]), amazon_stock[Tarix] = d)
-		formatString: #,0
 
 	partition amazon_stock = m
 		mode: import
@@ -33,3 +39,4 @@ table amazon_stock
 				    Result = Table.TransformColumnTypes(Renamed, {{"Tarix", type date}, {"Məhsul_kodu", type text}, {"Stock", Int64.Type}}, "en-US")
 				in
 				    Result
+

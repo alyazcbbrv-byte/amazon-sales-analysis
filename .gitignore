@@ -21,3 +21,6 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Toyota dashboard faylı repo-ya daxildir
+!toyota-dashboard/*.pbix

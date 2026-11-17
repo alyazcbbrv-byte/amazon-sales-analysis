@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "0d7d16f12484493b830e",
   "position": {
     "x": 958,
@@ -27,13 +27,13 @@
                 }
               },
               "queryRef": "Amazon_sku.Kateqoriya",
-              "nativeQueryRef": "Kateqoriya"
+              "nativeQueryRef": "Kateqoriya",
+              "active": true
             }
           ]
         }
       }
     },
-    "drillFilterOtherVisuals": true,
     "objects": {
       "data": [
         {
@@ -48,6 +48,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

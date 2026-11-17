@@ -4,10 +4,11 @@ model Model
 	discourageImplicitMeasures
 	sourceQueryCulture: en-US
 
+annotation PBI_ProTooling = ["DevMode"]
+
 ref table Calendar
 ref table amazon_sales
 ref table Amazon_city
 ref table Amazon_sku
 ref table amazon_stock
 
-ref expression FolderPath

@@ -1,41 +1,49 @@
 table Amazon_city
+	lineageTag: 9933b86c-0d98-4950-9e56-da911c0381e1
 
-	column 'Ştat_İD'
+	column Ştat_İD
 		dataType: string
+		lineageTag: 1c6f3954-de2d-47ac-8e45-e91d559073f2
 		summarizeBy: none
 		sourceColumn: Ştat_İD
 
-	column 'Ştat'
+	column Ştat
 		dataType: string
+		lineageTag: c6640d81-35f0-4204-ac7f-baf330f3b032
 		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: Ştat
 
-	column 'Şəhər_İD'
+	column Şəhər_İD
 		dataType: int64
 		formatString: 0
+		lineageTag: bec0b7af-6b26-46b6-bdae-3b84d30d1788
 		summarizeBy: none
 		sourceColumn: Şəhər_İD
 
-	column 'Şəhər'
+	column Şəhər
 		dataType: string
+		lineageTag: 5f804011-40ae-412e-ad24-ea418f701a7f
 		summarizeBy: none
 		sourceColumn: Şəhər
 
 	column lat
 		dataType: double
+		lineageTag: e5590a04-e4e1-4f4c-ac8b-0c25796af641
 		dataCategory: Latitude
 		summarizeBy: none
 		sourceColumn: lat
 
 	column lng
 		dataType: double
+		lineageTag: c00e22f3-73ba-422c-a8aa-67b9b09f3aed
 		dataCategory: Longitude
 		summarizeBy: none
 		sourceColumn: lng
 
 	column 'Şəhər (Ştat)' = Amazon_city[Şəhər] & ", " & Amazon_city[Ştat_İD]
 		dataType: string
+		lineageTag: e90f27aa-6d1a-46d2-a15d-db9530f73d16
 		summarizeBy: none
 
 	partition Amazon_city = m
@@ -49,3 +57,4 @@ table Amazon_city
 				    Result = Table.TransformColumnTypes(Renamed, {{"Ştat_İD", type text}, {"Ştat", type text}, {"Şəhər_İD", Int64.Type}, {"Şəhər", type text}, {"lat", type number}, {"lng", type number}}, "en-US")
 				in
 				    Result
+

@@ -1,27 +1,33 @@
 table Amazon_sku
+	lineageTag: bc3a77c9-600c-4ff8-bf35-6fe618e5aae9
 
-	column 'Məhsul_kodu'
+	column Məhsul_kodu
 		dataType: string
+		lineageTag: ad1afe66-45e6-4c27-ad0c-be03acc97868
 		summarizeBy: none
 		sourceColumn: Məhsul_kodu
 
 	column Dizayn_No
 		dataType: string
+		lineageTag: a148aa03-1cd5-4270-b8ca-fd3aa06aeac4
 		summarizeBy: none
 		sourceColumn: Dizayn_No
 
 	column Kateqoriya
 		dataType: string
+		lineageTag: 889da83d-290c-4e1e-921b-b5b962e1dffe
 		summarizeBy: none
 		sourceColumn: Kateqoriya
 
-	column 'Ölçü'
+	column Ölçü
 		dataType: string
+		lineageTag: 593ca701-9da9-4ad5-bd4d-a25d36c9452f
 		summarizeBy: none
 		sourceColumn: Ölçü
 
-	column 'Rəng'
+	column Rəng
 		dataType: string
+		lineageTag: 33f8e6b9-5760-4567-9218-4e4ba17b64be
 		summarizeBy: none
 		sourceColumn: Rəng
 
@@ -35,3 +41,4 @@ table Amazon_sku
 				    Result = Table.TransformColumnTypes(Renamed, {{"Məhsul_kodu", type text}, {"Dizayn_No", type text}, {"Kateqoriya", type text}, {"Ölçü", type text}, {"Rəng", type text}})
 				in
 				    Result
+

@@ -1,74 +1,93 @@
 table amazon_sales
+	lineageTag: 5d1b8653-3452-46cd-a88a-7d9245c105f4
+
+	measure 'Ümumi Satış' = SUM(amazon_sales[Satış])
+		formatString: #,0.00
+		lineageTag: d34fc072-b771-4e10-9353-c9de5af5816f
+
+	measure 'Ötən ilin eyni dövrü üzrə satış' = VAR y = YEAR(CALCULATE(MAX(amazon_sales[Tarix]))) RETURN CALCULATE([Ümumi Satış], SAMEPERIODLASTYEAR(FILTER(VALUES('Calendar'[Date]), YEAR('Calendar'[Date]) = y)), REMOVEFILTERS('Calendar'))
+		formatString: #,0.00
+		lineageTag: 6b9d88d7-b2fe-4bf1-802b-4db6e3214d2d
+
+	measure 'Ötən aya görə satış' = VAR d = CALCULATE(MAX(amazon_sales[Tarix])) RETURN CALCULATE([Ümumi Satış], DATESBETWEEN('Calendar'[Date], EOMONTH(d, -2) + 1, EOMONTH(d, -1)), REMOVEFILTERS('Calendar'))
+		formatString: #,0.00
+		lineageTag: 1c277019-8472-4912-8bf1-231bb51a26e3
+
+	measure 'Ötən aya görə satışın artım %' = DIVIDE([Cari ay satışı] - [Ötən aya görə satış], [Ötən aya görə satış])
+		formatString: 0.0%
+		lineageTag: 24dbf2b9-7c5e-45bf-a4d4-ef512944572b
+
+	measure 'Satışın ildən ilə böyümə %' = DIVIDE([Cari il satışı] - [Ötən ilin eyni dövrü üzrə satış], [Ötən ilin eyni dövrü üzrə satış])
+		formatString: 0.0%
+		lineageTag: 2cac12b5-d18d-4a77-b0e8-df9a47831033
+
+	measure 'Məhsul sayı (növ)' = DISTINCTCOUNT(amazon_sales[Məhsul_kodu])
+		formatString: #,0
+		lineageTag: 9f77b5ce-bcaf-4179-9da3-2190011bb06a
+
+	measure 'Əməliyyat sayı' = COUNTROWS(amazon_sales)
+		formatString: #,0
+		lineageTag: 390c4250-b171-4aa8-a6a1-19af253db7fe
+
+	measure 'Orta əməliyyat dəyəri' = DIVIDE([Ümumi Satış], [Əməliyyat sayı])
+		formatString: #,0.00
+		lineageTag: 7bc3eb6a-6ef6-4fa3-86ce-e63c8973a8a3
+
+	measure 'İlin əvvəlindən satış (YTD)' = TOTALYTD([Ümumi Satış], 'Calendar'[Date])
+		formatString: #,0.00
+		lineageTag: c9758d23-f8da-444f-9d87-6e208a4004c6
+
+	measure 'Satış payı %' = DIVIDE([Ümumi Satış], CALCULATE([Ümumi Satış], ALLSELECTED()))
+		formatString: 0.0%
+		lineageTag: f9aa86ea-d770-4feb-8250-3b85b7a3bd67
+
+	measure 'Cari il satışı' = VAR y = YEAR(CALCULATE(MAX(amazon_sales[Tarix]))) RETURN CALCULATE([Ümumi Satış], FILTER(VALUES('Calendar'[Date]), YEAR('Calendar'[Date]) = y))
+		formatString: #,0.00
+		lineageTag: bc7ebd3d-ecbb-45c1-997f-f0a62c3dfa77
+
+	measure 'Cari ay satışı' = VAR d = CALCULATE(MAX(amazon_sales[Tarix])) RETURN CALCULATE([Ümumi Satış], DATESBETWEEN('Calendar'[Date], EOMONTH(d, -1) + 1, EOMONTH(d, 0)), REMOVEFILTERS('Calendar'))
+		formatString: #,0.00
+		lineageTag: bdc10589-f9d3-45c2-a94c-c18d1189711f
 
 	column Tarix
 		dataType: dateTime
 		formatString: dd.MM.yyyy
+		lineageTag: 117b845b-9285-4d49-b3dc-a816eb6a6297
 		summarizeBy: none
 		sourceColumn: Tarix
 
-	column 'Şəhər_İD'
+	column Şəhər_İD
 		dataType: int64
 		formatString: 0
+		lineageTag: e22ba78c-d472-4202-9708-094fd0c9235f
 		summarizeBy: none
 		sourceColumn: Şəhər_İD
 
-	column 'Sifaris_İD'
+	column Sifaris_İD
 		dataType: int64
 		formatString: 0
+		lineageTag: 419e4337-8f69-4094-a958-931f1bea3367
 		summarizeBy: none
 		sourceColumn: Sifaris_İD
 
-	column 'Satış'
+	column Satış
 		dataType: double
 		formatString: #,0.00
+		lineageTag: 9f99ff83-146d-4a70-b521-5661568b18dd
 		summarizeBy: none
 		sourceColumn: Satış
 
 	column Tip
 		dataType: string
+		lineageTag: c75b7541-da57-49a5-9a27-4acbfa836c3e
 		summarizeBy: none
 		sourceColumn: Tip
 
-	column 'Məhsul_kodu'
+	column Məhsul_kodu
 		dataType: string
+		lineageTag: 2fe11d5a-300b-46a4-9b5b-e3971a84300c
 		summarizeBy: none
 		sourceColumn: Məhsul_kodu
-
-	measure 'Ümumi Satış' = SUM(amazon_sales[Satış])
-		formatString: #,0.00
-
-	measure 'Ötən ilin eyni dövrü üzrə satış' = VAR y = YEAR(CALCULATE(MAX(amazon_sales[Tarix]))) RETURN CALCULATE([Ümumi Satış], SAMEPERIODLASTYEAR(FILTER(VALUES('Calendar'[Date]), YEAR('Calendar'[Date]) = y)), REMOVEFILTERS('Calendar'))
-		formatString: #,0.00
-
-	measure 'Ötən aya görə satış' = VAR d = CALCULATE(MAX(amazon_sales[Tarix])) RETURN CALCULATE([Ümumi Satış], DATESBETWEEN('Calendar'[Date], EOMONTH(d, -2) + 1, EOMONTH(d, -1)), REMOVEFILTERS('Calendar'))
-		formatString: #,0.00
-
-	measure 'Ötən aya görə satışın artım %' = DIVIDE([Cari ay satışı] - [Ötən aya görə satış], [Ötən aya görə satış])
-		formatString: 0.0%
-
-	measure 'Satışın ildən ilə böyümə %' = DIVIDE([Cari il satışı] - [Ötən ilin eyni dövrü üzrə satış], [Ötən ilin eyni dövrü üzrə satış])
-		formatString: 0.0%
-
-	measure 'Məhsul sayı (növ)' = DISTINCTCOUNT(amazon_sales[Məhsul_kodu])
-		formatString: #,0
-
-	measure 'Əməliyyat sayı' = COUNTROWS(amazon_sales)
-		formatString: #,0
-
-	measure 'Orta əməliyyat dəyəri' = DIVIDE([Ümumi Satış], [Əməliyyat sayı])
-		formatString: #,0.00
-
-	measure 'İlin əvvəlindən satış (YTD)' = TOTALYTD([Ümumi Satış], 'Calendar'[Date])
-		formatString: #,0.00
-
-	measure 'Satış payı %' = DIVIDE([Ümumi Satış], CALCULATE([Ümumi Satış], ALLSELECTED()))
-		formatString: 0.0%
-
-	measure 'Cari il satışı' = VAR y = YEAR(CALCULATE(MAX(amazon_sales[Tarix]))) RETURN CALCULATE([Ümumi Satış], FILTER(VALUES('Calendar'[Date]), YEAR('Calendar'[Date]) = y))
-		formatString: #,0.00
-
-	measure 'Cari ay satışı' = VAR d = CALCULATE(MAX(amazon_sales[Tarix])) RETURN CALCULATE([Ümumi Satış], DATESBETWEEN('Calendar'[Date], EOMONTH(d, -1) + 1, EOMONTH(d, 0)), REMOVEFILTERS('Calendar'))
-		formatString: #,0.00
 
 	partition amazon_sales = m
 		mode: import
@@ -80,3 +99,4 @@ table amazon_sales
 				    Result = Table.TransformColumnTypes(Renamed, {{"Tarix", type date}, {"Şəhər_İD", Int64.Type}, {"Sifaris_İD", Int64.Type}, {"Satış", type number}, {"Tip", type text}, {"Məhsul_kodu", type text}}, "en-US")
 				in
 				    Result
+

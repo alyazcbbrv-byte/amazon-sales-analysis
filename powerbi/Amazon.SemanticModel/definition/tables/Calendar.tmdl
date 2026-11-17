@@ -1,32 +1,39 @@
 table Calendar
+	lineageTag: c0102fa9-97ee-4718-a8f0-5e589f2a2031
 	dataCategory: Time
 
 	column Date
 		dataType: dateTime
-		formatString: dd.MM.yyyy
 		isKey
+		formatString: dd.MM.yyyy
+		lineageTag: ad4242a8-f344-4305-a5f0-d2f2fcc8792f
 		summarizeBy: none
 		sourceColumn: [Date]
 
-	column 'İl' = YEAR('Calendar'[Date])
+	column İl = YEAR('Calendar'[Date])
 		dataType: int64
 		formatString: 0
+		lineageTag: d51777f0-d921-4422-b4b6-f61c10b9d49a
 		summarizeBy: none
 
 	column AyNo = MONTH('Calendar'[Date])
 		dataType: int64
 		formatString: 0
+		lineageTag: b96728b0-51e9-4e00-8d98-c15ac4f7d651
 		summarizeBy: none
 
 	column Ay = SWITCH('Calendar'[AyNo],1,"Yanvar",2,"Fevral",3,"Mart",4,"Aprel",5,"May",6,"İyun",7,"İyul",8,"Avqust",9,"Sentyabr",10,"Oktyabr",11,"Noyabr",12,"Dekabr")
 		dataType: string
-		sortByColumn: AyNo
+		lineageTag: cd5d9cf4-b1c1-491d-88a4-5c9e464338fd
 		summarizeBy: none
+		sortByColumn: AyNo
 
-	column 'İlAy' = FORMAT('Calendar'[Date], "YYYY-MM")
+	column İlAy = FORMAT('Calendar'[Date], "YYYY-MM")
 		dataType: string
+		lineageTag: 5a1dd952-ad1b-488f-afaf-50e661801956
 		summarizeBy: none
 
 	partition Calendar = calculated
 		mode: import
 		source = CALENDAR(DATE(2019,1,1), DATE(2022,12,31))
+

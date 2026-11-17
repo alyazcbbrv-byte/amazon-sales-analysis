@@ -3,17 +3,18 @@ relationship 7aad6954-8e48-4a75-acbe-5348b7a4f15d
 	toColumn: Calendar.Date
 
 relationship 87b3346e-a796-433f-b7df-b2c595f3b0a6
-	fromColumn: amazon_sales.'Məhsul_kodu'
-	toColumn: Amazon_sku.'Məhsul_kodu'
+	fromColumn: amazon_sales.Məhsul_kodu
+	toColumn: Amazon_sku.Məhsul_kodu
 
 relationship 2a02af77-1df1-4caf-a400-2c80390f312f
-	fromColumn: amazon_sales.'Şəhər_İD'
-	toColumn: Amazon_city.'Şəhər_İD'
+	fromColumn: amazon_sales.Şəhər_İD
+	toColumn: Amazon_city.Şəhər_İD
 
 relationship 28c03b6c-e5b4-4eca-9983-e1420a5e8bfa
-	fromColumn: amazon_stock.'Məhsul_kodu'
-	toColumn: Amazon_sku.'Məhsul_kodu'
+	fromColumn: amazon_stock.Məhsul_kodu
+	toColumn: Amazon_sku.Məhsul_kodu
 
 relationship bf7ae2cf-e4e9-43c5-8d7a-d4ec99266203
 	fromColumn: amazon_stock.Tarix
 	toColumn: Calendar.Date
+
