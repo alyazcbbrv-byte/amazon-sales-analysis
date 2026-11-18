@@ -1,118 +1,118 @@
-# Amazon Sales Analysis (2019–2022)
+# Amazon satış analizi (2019–2022)
 
-🇬🇧 English · [🇦🇿 Azərbaycanca](README.az.md)
+[🇬🇧 English](README.en.md) · 🇦🇿 Azərbaycanca
 
-End-to-end analysis of Amazon apparel sales with **Python and Power BI**: cleaning messy Excel files (ETL), computing the key metrics, and an interactive Power BI report.
+Amazon geyim satışlarının **Python + Power BI** ilə tam analizi: dağınıq Excel fayllarının təmizlənməsi (ETL), əsas göstəricilərin hesablanması və interaktiv Power BI hesabatı.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-2.x-150458?logo=pandas&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-PBIP%20%2F%20TMDL-F2C811?logo=powerbi&logoColor=black)
-![License](https://img.shields.io/badge/License-MIT-green)
 
-![Amazon sales overview](reports/figures/00_icmal.png)
+![Amazon satış icmalı](reports/figures/00_icmal.png)
 
-## Business questions
+## Məqsəd
 
-- How did sales change over four years, and where did the growth come from?
-- Which categories and regions earn the most?
-- Is there seasonality, and how does inventory move relative to sales?
-- Can the answers be packaged as an interactive dashboard for management?
+- 4 il ərzində satışın necə dəyişdiyini, artımın mənbəyini müəyyən etmək
+- Ən gəlirli kateqoriyaları və regionları tapmaq
+- Mövsümiliyi və stok səviyyəsini izləmək
+- Rəhbərlik üçün interaktiv dashboard hazırlamaq
 
-## Key results
+## Əsas nəticələr
 
-| Metric | Value |
+| Göstərici | Dəyər |
 |---|---:|
-| Total sales (2019–2022) | **1.88 bn** |
-| Sales transactions | **672,709** |
-| Compound annual growth (CAGR) | **22.0%** |
-| Strongest month | **October 2022** (60.4 M) |
+| Ümumi satış (2019–2022) | **1.88 mlrd** |
+| Satış əməliyyatı | **672 709** |
+| Orta illik artım (CAGR) | **22.0%** |
+| Ən güclü ay | **Oktyabr 2022** (60.4 mln) |
 
-| Year | Sales | YoY growth | Transactions |
+| İl | Satış | İllik artım | Əməliyyat |
 |---|---:|---:|---:|
-| 2019 | 362.5 M | n/a | 129,956 |
-| 2020 | 367.9 M | +1.5% | 131,915 |
-| 2021 | 487.7 M | +32.5% | 174,918 |
-| 2022 | 657.9 M | +34.9% | 235,920 |
+| 2019 | 362.5 mln | — | 129 956 |
+| 2020 | 367.9 mln | +1.5% | 131 915 |
+| 2021 | 487.7 mln | +32.5% | 174 918 |
+| 2022 | 657.9 mln | +34.9% | 235 920 |
 
-### Insights
+**Müşahidələr**
 
-1. **Growth is volume-driven.** The average transaction value stayed at about 2,789 for four years, so all growth comes from more transactions (130 k → 236 k).
-2. **2020 was flat** (+1.5%); in 2021 and 2022 sales grew by roughly a third each year.
-3. **KURTA accounts for 40% of sales**, and KURTA, KURTA SET and SET together make up about 69%: revenue is concentrated in a few categories.
-4. **Geography:** Texas, Pennsylvania, California and Illinois are the biggest markets.
-5. **Sales type:** type A fell from 60% of sales in 2019 to 52% from 2020 on; type B rose from 34% to 39%.
-6. **Inventory:** monthly sales transactions in 2022 are on average ~82% higher than in 2019, while the average daily stock stayed flat, so inventory turns faster.
-
-<p>
-  <img src="reports/figures/01_illik_satis.png" width="49%" alt="Yearly sales">
-  <img src="reports/figures/03_kateqoriya.png" width="49%" alt="Categories">
-</p>
-
-![Monthly trend](reports/figures/02_ayliq_trend.png)
-
-![Seasonality heatmap](reports/figures/07_movsumilik.png)
+1. **Artım həcm hesabınadır.** Orta əməliyyat dəyəri 4 il ərzində ~2 789 səviyyəsində sabit qalıb, satışın artımı isə tamamilə əməliyyat sayının artmasından gəlir (130 min → 236 min).
+2. **2020 durğunluq ili olub** (+1.5%), 2021–2022-də isə satış hər il təxminən üçdə bir artıb.
+3. **KURTA** kateqoriyası satışın **40%**-ni təşkil edir; KURTA, KURTA SET və SET birlikdə ~69%-dir — gəlir bir neçə kateqoriyada cəmlənib.
+4. **Coğrafiya:** Texas, Pennsylvania, California və Illinois ən böyük bazarlardır.
+5. **Satış tipi:** A tipinin satışdakı payı 2019-da 60% idi, 2020-dən bəri 52%-də sabitdir; B tipi 34%-dən 39%-ə qalxıb.
+6. **Stok:** 2022-də aylıq satış əməliyyatı 2019-dakından orta hesabla ~82% çoxdur, orta gündəlik stok isə eyni səviyyədə qalıb — stok dövriyyəsi sürətlənib.
 
 <p>
-  <img src="reports/figures/04_top_statlar.png" width="49%" alt="Top states">
-  <img src="reports/figures/05_tip_payi.png" width="49%" alt="Sales type share">
+  <img src="reports/figures/01_illik_satis.png" width="49%" alt="İllik satış">
+  <img src="reports/figures/03_kateqoriya.png" width="49%" alt="Kateqoriyalar">
 </p>
 
-![Stock vs sales](reports/figures/06_stok_trend.png)
+![Aylıq trend](reports/figures/02_ayliq_trend.png)
 
-Full generated report: [reports/summary.md](reports/summary.md)
+![Mövsümilik xəritəsi](reports/figures/07_movsumilik.png)
 
-## Power BI report
+<p>
+  <img src="reports/figures/04_top_statlar.png" width="49%" alt="Top ştatlar">
+  <img src="reports/figures/05_tip_payi.png" width="49%" alt="Satış tipi">
+</p>
+
+![Stok və satış](reports/figures/06_stok_trend.png)
+
+Tam hesabat: [reports/summary.md](reports/summary.md)
+
+## Power BI hesabatı
 
 ![Power BI dashboard](reports/figures/powerbi_dashboard.png)
 
-Two pages with navigation buttons: **Sales overview** (KPIs, monthly comparison, Top 10 cities, state matrix) and **Geography** (sales by state map).
+İki səhifə: **📊 Satış icmalı** (KPI-lar, aylıq müqayisə, Top 10 şəhər, ştat matrisi) və **🗺️ Coğrafiya** (ştatlar üzrə xəritə). Səhifələr arasında yuxarıdakı düymələrlə keçid olunur.
 
-The model is a star schema: fact tables `amazon_sales` and `amazon_stock`, dimensions `Amazon_sku`, `Amazon_city` and `Calendar`. Time-intelligence measures (YoY, MoM, YTD) are written in DAX. Setup, model and all measures: [powerbi/README.md](powerbi/README.md)
+Model ulduz sxemindədir: `amazon_sales` və `amazon_stock` fakt cədvəlləri, `Amazon_sku`, `Amazon_city` və `Calendar` ölçü cədvəlləri. Time-intelligence ölçüləri (YoY, MoM, YTD) DAX ilə yazılıb.
+Quraşdırma, model sxemi və bütün DAX ölçüləri: [powerbi/README.md](powerbi/README.md)
 
-## Project structure
+## Layihənin strukturu
 
 ```
 amazon-sales-analysis/
 ├── data/
-│   ├── raw/              ← source Excel files (not in the repo)
-│   └── processed/        ← clean CSVs produced by the ETL (not in the repo)
+│   ├── raw/              ← mənbə Excel faylları (repo-ya daxil deyil)
+│   └── processed/        ← ETL-in yaratdığı təmiz CSV-lər (repo-ya daxil deyil)
 ├── src/
-│   ├── etl.py            ← Excel → clean CSV
-│   ├── analysis.py       ← metrics, charts, summary.md
-│   └── style.py          ← shared chart style and colour palette
+│   ├── etl.py            ← Excel → təmiz CSV
+│   ├── analysis.py       ← göstəricilər, qrafiklər, summary.md
+│   └── style.py          ← qrafiklərin vahid üslubu və rəng palitrası
 ├── reports/
-│   ├── figures/          ← PNG charts
-│   └── summary.md        ← auto-generated summary
-├── powerbi/              ← Power BI Project (.pbip, TMDL + PBIR) and theme
+│   ├── figures/          ← PNG qrafiklər
+│   └── summary.md        ← avtomatik yaranan xülasə
+├── powerbi/              ← Power BI Project (.pbip, TMDL + PBIR) və tema faylı
 ├── requirements.txt
 └── README.md
 ```
 
-## Data
+## Məlumat
 
-| File | Content | Rows |
+| Fayl | Məzmun | Sətir |
 |---|---|---:|
-| `Amazon Database sales.xlsx` | Date, city, order ID, sales amount, type (A/B/C), product code; one sheet per year | 672,709 |
-| `Amazon Database stock.xlsx` | Daily stock level per product code; one sheet per year | 281,952 |
-| `Amazon Database SKU.xlsx` | Product code → design, category, size, colour | 9,169 |
-| `Amazon Database City.xlsx` | US cities, states, coordinates | 30,409 |
+| `Amazon Database sales.xlsx` | Tarix, şəhər, sifariş ID, satış məbləği, tip (A/B/C), məhsul kodu — hər il ayrı vərəqdə | 672 709 |
+| `Amazon Database stock.xlsx` | Gündəlik stok qalığı (məhsul kodu üzrə) — hər il ayrı vərəqdə | 281 952 |
+| `Amazon Database SKU.xlsx` | Məhsul kodu → dizayn, kateqoriya, ölçü, rəng | 9 169 |
+| `Amazon Database City.xlsx` | ABŞ şəhərləri, ştatlar, koordinatlar | 30 409 |
 
-The files are large, so they are not included. Put them into `data/raw/`. They are educational sample data from a training course.
+Fayllar böyük olduğu üçün repo-ya daxil edilməyib. Onları `data/raw/` qovluğuna qoyun.
 
-### Cleaning steps (`src/etl.py`)
+### Təmizləmə addımları (`src/etl.py`)
 
-- Junk rows above the header are detected and removed automatically (sales: 4 rows, city: 2 rows, SKU: repeated header).
-- The yearly sheets are combined into a single table.
-- Excel serial numbers (`43466`) are converted to dates.
-- Duplicate SKU and city records are dropped and category names are standardised.
-- Referential check: every sale finds its city and product in the dimension tables (0% loss).
+- Başlıq sətrindən əvvəlki lazımsız sətirlər avtomatik tapılıb silinir (sales: 4 sətir, city: 2 sətir, SKU: təkrarlanan başlıq).
+- Hər ilin vərəqi bir cədvəldə birləşdirilir.
+- Excel seriya nömrələri (`43466`) tarixə çevrilir.
+- Təkrarlanan SKU və şəhər qeydləri silinir, kateqoriya adları standartlaşdırılır.
+- Əlaqə yoxlaması: hər satışın şəhəri və məhsulu ölçü cədvəllərində tapılır (0% itki).
 
-### Data notes
+### Məlumatla bağlı qeydlər
 
-- `Sifaris_İD` (order ID) is not unique: the same 34,745 IDs repeat every year. Each row is therefore treated as a separate sales transaction.
-- Stock is a daily snapshot and must not be summed over dates; the average daily or last-date value is used instead.
+- `Sifaris_İD` unikal deyil — eyni 34 745 ID hər il təkrarlanır. Ona görə analizdə hər sətir ayrı satış əməliyyatı sayılır.
+- Stok gündəlik snapshot-dır, tarixlər üzrə cəmlənməməlidir — orta gündəlik və ya son tarix dəyəri istifadə olunur.
 
-## How to run
+## İşə salmaq
 
 ```bash
 git clone https://github.com/alyazcbbrv-byte/amazon-sales-analysis.git
@@ -121,28 +121,21 @@ python -m venv .venv
 .venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 
-# put the Excel files into data/raw/, then:
+# Excel fayllarını data/raw/ qovluğuna qoyun, sonra:
 python src/etl.py
 python src/analysis.py
 ```
 
-The ETL takes about 3 minutes (the sales file is ~32 MB). Then open `powerbi/Amazon_Dashboard.pbip` and point the `FolderPath` parameter at `data/processed\`.
+ETL ~3 dəqiqə çəkir (sales faylı ~32 MB-dır). Sonra `powerbi/Amazon_Dashboard.pbip` faylını açıb `FolderPath` parametrini `data/processed\` qovluğuna yönləndirin.
 
-## Skills demonstrated
+## Texnologiyalar
 
-- **Data cleaning and ETL** with pandas, including automated data-quality checks
-- **Exploratory and business analysis**: growth decomposition, concentration, seasonality, inventory turnover
-- **Data modelling**: star schema with fact and dimension tables
-- **DAX**: time-intelligence measures (YoY, MoM, YTD)
-- **Data visualisation** in matplotlib and Power BI
-- **Version control** of a Power BI model (PBIP / TMDL)
+- **Python**: pandas, openpyxl, matplotlib
+- **Power BI Desktop**: Power Query (M), DAX, PBIP/TMDL formatı
+- **Git** ilə versiya nəzarəti — Power BI modeli mətn faylları kimi saxlanılır
 
-## Author
+---
 
-**Alyaz Cabbarova**: [GitHub](https://github.com/alyazcbbrv-byte) · [LinkedIn](https://www.linkedin.com/in/alyaz-cabbarova-450a6140b) · [alyazcbbrv@gmail.com](mailto:alyazcbbrv@gmail.com)
+Müəllif: **Alyaz Cabbarova** · [GitHub](https://github.com/alyazcbbrv-byte) · [LinkedIn](https://www.linkedin.com/in/alyaz-cabbarova-450a6140b) · [alyazcbbrv@gmail.com](mailto:alyazcbbrv@gmail.com)
 
-More projects: [Toyota sales dashboard](https://github.com/alyazcbbrv-byte/toyota-sales-powerbi) · [Retail chain: sales vs plan and churn](https://github.com/alyazcbbrv-byte/retail-sales-vs-plan-powerbi)
-
-## License
-
-[MIT](LICENSE) for the code and report. The source data is educational sample data from a training course and is not redistributed here.
+Digər layihə: [Toyota satış analizi (Power BI dashboard)](https://github.com/alyazcbbrv-byte/toyota-sales-powerbi)
